@@ -101,7 +101,6 @@ class SortingRobot:
         # Fill this out
         self.set_light_on()
         while self.light_is_on():
-            print(self._time)
 
             self.swap_item()
             # Handle moving largest right
@@ -119,13 +118,14 @@ class SortingRobot:
                 elif self.compare_item() > 0:
                     self.swap_item()
                 self.move_left()
+
             if not self.can_move_left() and self.compare_item() is None:
                 self.swap_item()
-            # break
+
             if not self.can_move_right():
                 self.set_light_off()
                 self.swap_item()
-                break
+
             self.move_right()
 
 
